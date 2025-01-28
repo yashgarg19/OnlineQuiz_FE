@@ -6,13 +6,13 @@
                     <img width="200px" src="assets\exam portal sign up img.avif" alt="Image" />
                 </div>
                 <h1 class="text-center">register here</h1>
-                {{user| json}}
                 <form (ngSubmit)="formSubmit()">
                     <!-- Username Field -->
                     <mat-form-field class="full-width" appearance="outline">
                         <mat-label>Username</mat-label>
                         <input [(ngModel)]="user.username" name="username"
                          matInput placeholder="Enter Your Unique Username">
+                         <mat-hint>User name must be Unique!!</mat-hint>
                       </mat-form-field> 
 
                       <!-- password Field -->

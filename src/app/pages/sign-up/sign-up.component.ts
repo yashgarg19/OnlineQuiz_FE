@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserServiceService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './sign-up.component.css'
 })
 export class SignUpComponent implements OnInit{
-  constructor() {}
+  constructor(private UserService: UserServiceService) {}
   ngOnInit(): void {}
 
   public user={
@@ -26,5 +27,17 @@ export class SignUpComponent implements OnInit{
     {
       alert('user kaha hai???');
     }
+
+    // adduser: user-service
+    this.UserService.addUser(this.user).subscribe(
+      (data)=>{
+          console.log(data);
+          alert("Success");
+      },
+      (error)=>{
+          console.log(error);
+          alert("Something went wrong");
+      }
+    )
   }
 }

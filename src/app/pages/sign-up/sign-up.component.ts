@@ -39,7 +39,7 @@ export class SignUpComponent implements OnInit{
       },
       (error)=>{
           console.log(error);
-          this._snackBar.open("something went wrong",'',{duration:3000,verticalPosition:'bottom',horizontalPosition:'left'});
+          this._snackBar.open("something went wrong",'',{duration:2000,verticalPosition:'bottom',horizontalPosition:'left'});
       }
     )
   }
